@@ -21,6 +21,8 @@ flutter:
     - assets/download.jpeg
     - assets/img1.jpeg
     - assets/img2.jpeg
+    - assets/balcha.jpeg
+
 
   
   fonts:
