@@ -4,9 +4,15 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: MyFirst()));
 
-class MyFirst extends StatelessWidget {
+class MyFirst extends StatefulWidget {
   const MyFirst({super.key});
 
+  @override
+  State<MyFirst> createState() => _MyFirstState();
+}
+
+class _MyFirstState extends State<MyFirst> {
+  int mylevel = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +22,15 @@ class MyFirst extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            mylevel++;
+          });
+        },
+        child: Icon(Icons.plus_one),
+        backgroundColor: Colors.grey[800],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -50,7 +65,7 @@ class MyFirst extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            "1",
+            "$mylevel",
             style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
